@@ -12,6 +12,12 @@ and wait for each callback to execute before moving on to the next.
 
 async function forEachAsync(array, callback) {
     // Implement this function
+
+    for(let index = 0; index < array.length; index++) {
+        await callback(array[index], index, array);
+    }
+
+    return Promise.resolve();
 }
 
 module.exports = forEachAsync;

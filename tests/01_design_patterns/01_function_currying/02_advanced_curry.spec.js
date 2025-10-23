@@ -24,3 +24,11 @@ test('Curries a function with four arguments', () => {
   expect(curriedJoin('I')(' ')('am')(' happy')).toEqual('I am happy');
   expect(curriedJoin('I', ' ', 'am', ' happy')).toEqual('I am happy');
 });
+
+test('Curries a function with four or more arguments', () => {
+  const join = (a, b, c, d) => `${a}${b}${c}${d}`;
+  const curriedJoin = curry(join);
+  expect(curriedJoin('I')(' ')('am')(' happy')).toEqual('I am happy');
+  expect(curriedJoin('I', ' ', 'am', ' happy')).toEqual('I am happy');
+  expect(curriedJoin('I')(' ')('am')(' happy', ' Mateusz')).toEqual('I am happy');
+});
