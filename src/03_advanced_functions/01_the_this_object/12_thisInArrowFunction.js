@@ -16,8 +16,21 @@ Requirements:
 - return an array of the two results
 */
 
+
+
 function exploreThisInArrowFunction(arrowFunc, regularFunc) {
-    // Implement this function
+  // Implement this function
+    const obj = {
+        name: "Test",
+    };
+
+    obj.arrowFunc = arrowFunc;
+    obj.regularFunc = regularFunc;
+
+    const arrowResult = obj.arrowFunc();
+    const regularResult = obj.regularFunc();
+
+    return [arrowResult, regularResult]; // [undefined, "Test"]
 }
 
 module.exports = exploreThisInArrowFunction;
